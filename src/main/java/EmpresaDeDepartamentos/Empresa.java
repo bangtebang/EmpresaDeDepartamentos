@@ -26,11 +26,21 @@ public class Empresa {
 		this.nombre = nombre;
 	}
 
-	public void agregarDepartamento() {
-		throw new UnsupportedOperationException();
+	public void agregarDepartamento(Departamento departamento) {
+		departamentos.add(departamento);
 	}
-
-	public void agregarOficina() {
-		throw new UnsupportedOperationException();
+	public void agregarOficina(Oficina oficina) {
+		oficinas.add(oficina);
 	}
-}
+	public Oficina buscarOficinaNombre(String nombre) {
+		for (Oficina oficina : oficinas) {
+			if (oficina.getNombre().equals(nombre)) {
+				return oficina;
+			}
+		}
+		return null;
+	}
+public void eliminarOficina(Oficina oficina) {
+		oficinas.remove(oficina);
+	}
+	}
